@@ -1,0 +1,11 @@
+python-dotenv==0.*
+SQLAlchemy==1.4.*
+psycopg2==2.*
+Telethon==1.*
+pyromod==1.5
+pyrogram1==0.*
+TgCrypto==1.*
+flask==2.1.1
+werkzeug==2.0.3
+pyrogram==1.4.12
+args
