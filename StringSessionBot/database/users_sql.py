@@ -1,4 +1,4 @@
-# Asad ALI      
+# Asad ALI
 
 from sqlalchemy import Column, BigInteger
 from StringSessionBot.database import BASE, SESSION
