@@ -70,7 +70,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
 
 ERROR_MESSAGE = (
     "ᴏᴏᴘs! ᴀɴ ᴇxᴄᴇᴘᴛɪᴏɴ ᴏᴄᴄᴜʀᴇᴅ! \n\n**ᴇʀʀᴏʀ** : {} "
-    "\n\nᴘʟᴇᴀsᴇ ᴠɪsɪᴛ @AsadSupport ɪꜰ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴅᴏᴇsɴ'ᴛ ᴄᴏɴᴛᴀɪɴ ᴀɴʏ "
+    "\n\nᴘʟᴇᴀsᴇ ᴠɪsɪᴛ @Alexa_BotUpdates ɪꜰ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴅᴏᴇsɴ'ᴛ ᴄᴏɴᴛᴀɪɴ ᴀɴʏ "
     "sᴇɴsɪᴛɪᴠᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀɴᴅ ʏᴏᴜ ɪꜰ ᴡᴀɴᴛ ᴛᴏ ʀᴇᴘᴏʀᴛ ᴛʜɪs ᴀs "
     "ᴛʜɪs ᴇʀʀᴏʀ ᴍᴇssᴀɢᴇ ɪs ɴᴏᴛ ʙᴇɪɴɢ ʟᴏɢɢᴇᴅ ʙʏ ᴜs!"
 )
