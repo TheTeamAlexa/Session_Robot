@@ -9,4 +9,4 @@ werkzeug==2.0.3
 pyrogram==1.4.12
 args
 python-telegram-bot==12.8
-psycopg2
+git+https://github.com/psycopg/psycopg2.git
