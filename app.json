@@ -1,30 +1,22 @@
 {
   "name": "Pyrogram And Telethon String Session Generator",
-  "description": "Generate Pyrogram And Telethon String Session Easley",
+  "description": "Generate Pyrogram And Telethon String Session Easily",
   "logo": "https://telegra.ph/file/27bfcfbb9d72fb3f3a1ca.jpg",
-  "keywords": [
-    "telegram",
-    "bot",
-    "python",
-    "pyrogram"
-  ],
-    "buildpacks": [{
-    "url": "heroku/python"
-  }],
+  "keywords": ["telegram", "bot", "python", "pyrogram"],
+  "buildpacks": [{"url": "heroku/python"}],
   "formation": {
     "worker": {
       "quantity": 1,
-      "size": "free"
     }
   },
   "addons": [
-      {
-         "options": {
-            "version": "12"
-         },
-         "plan": "heroku-postgresql"
-      }
-   ],
+    {
+      "options": {
+        "version": "12"
+      },
+      "plan": "heroku-postgresql"
+    }
+  ],
   "repository": "https://github.com/jankarikiduniya/Session_Robot",
   "env": {
     "ENVIRONMENT": {
@@ -35,17 +27,17 @@
     "API_ID": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
-      "value": ""
+      "value": "your_api_id_here"
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
-      "value": ""
+      "value": "your_api_hash_here"
     },
     "BOT_TOKEN": {
       "description": "Obtain a Telegram bot token by contacting @BotFather",
       "required": true,
-      "value": ""
+      "value": "your_bot_token_here"
     },
     "MUST_JOIN": {
       "description": "Add username/id of a channel/group",
