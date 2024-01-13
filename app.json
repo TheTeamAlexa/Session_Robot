@@ -1,6 +1,6 @@
 {
   "name": "Pyrogram And Telethon String Session Generator",
-  "description": "Generate Pyrogram And Telethon String Session Easley",
+  "description": "Generate Pyrogram And Telethon String Session Easily",
   "logo": "https://telegra.ph/file/27bfcfbb9d72fb3f3a1ca.jpg",
   "keywords": [
     "telegram",
@@ -8,7 +8,7 @@
     "python",
     "pyrogram"
   ],
-    "buildpacks": [{
+  "buildpacks": [{
     "url": "heroku/python"
   }],
   "formation": {
@@ -17,14 +17,7 @@
       "size": "free"
     }
   },
-  "addons": [
-      {
-         "options": {
-            "version": "12"
-         },
-         "plan": "heroku-postgresql"
-      }
-   ],
+  "addons": [],
   "repository": "https://github.com/jankarikiduniya/Session_Robot",
   "env": {
     "ENVIRONMENT": {
@@ -35,22 +28,27 @@
     "API_ID": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
-      "value": ""
+      "value": "${API_ID}"
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
-      "value": ""
+      "value": "${API_HASH}"
     },
     "BOT_TOKEN": {
       "description": "Obtain a Telegram bot token by contacting @BotFather",
       "required": true,
-      "value": ""
+      "value": "${BOT_TOKEN}"
+    },
+    "DATABASE_URL": {
+      "description": "PostgreSQL database URL",
+      "required": false,
+      "value": "${DATABASE_URL}"
     },
     "MUST_JOIN": {
       "description": "Add username/id of a channel/group",
       "required": false,
-      "value": "https://t.me/Alexa_Help"
+      "value": "Alexa_Help"
     }
   }
 }
