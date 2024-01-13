@@ -7,3 +7,4 @@ werkzeug==2.0.3
 pyrogram==1.4.12
 psycopg2-binary
 Telethon==1.*
+pickledb<1
