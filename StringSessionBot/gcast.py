@@ -6,24 +6,21 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 # Initialize the database
-db = pickledb.load("user_db.db", False)
-
+db = pickledb.load('user_db.db', False)
 
 # Filters to use command
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
 
-
 # Owner id
 owner_id = 6174058850
-
 
 # Start Message
 @Client.on_message(filter("start"))
 async def start(bot: Client, msg: Message):
     user = await bot.get_me()
     user_id = msg.from_user.id
-    if not db.get(str(user_id)):
+    if not db.exists(str(user_id)):
         db.set(str(user_id), True)
     mention = user.mention
     await bot.send_message(
@@ -32,26 +29,20 @@ async def start(bot: Client, msg: Message):
         reply_markup=InlineKeyboardMarkup(Data.buttons),
     )
 
-
 @Client.on_message(filter("gcast") & filters.private)
-async def gcast_command(client, message):
+async def broadcast_command(client, message):
     if message.from_user.id == owner_id:
         await message.reply_text("Enter the message you want to broadcast:")
-    elif message.text:
-        users = db.getall()
+        broadcast_text = message.text.split(" ", 1)[1]
         delivered_count = 0
-        for user_id in users:
+        for user_id in db.getall():
             try:
                 user_id = int(user_id)
-                await client.send_message(
-                    user_id, f"Broadcast message By @TheTeamAlexa: {message.text}"
-                )
+                await client.send_message(user_id, f"Broadcast message By @TheTeamAlexa: {broadcast_text}")
                 delivered_count += 1
             except ValueError:
                 pass
 
-        await client.send_message(
-            message.chat.id, f"Broadcast sent successfully to {delivered_count} users!"
-        )
+        await client.send_message(message.chat.id, f"Broadcast sent successfully to {delivered_count} users!")
     else:
         await message.reply_text("You are not authorized to use this command.")
