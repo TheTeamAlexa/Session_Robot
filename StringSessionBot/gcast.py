@@ -58,6 +58,6 @@ async def gcast_command(client, message):
     if message.from_user.id == owner_id:
         await message.reply_text("Enter the message you want to broadcast:")
         # Wait for the user's response
-        await client.register_raw_handler(handle_broadcast, message.chat.id)
+        await client.add_handler(handle_broadcast, message.chat.id)
     else:
         await message.reply_text("You are not authorized to use this command.")
