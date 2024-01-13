@@ -37,7 +37,7 @@ async def start(bot: Client, msg: Message):  # Corrected 'message' to 'msg'
 async def gcast_command(client, message):
     if message.from_user.id == owner_id:
         await message.reply_text("Enter the message you want to broadcast:")
-        client.add_message_handler(handle_broadcast)
+        client.on_message(handle_broadcast)
     else:
         await message.reply_text("You are not authorized to use this command.")
 
