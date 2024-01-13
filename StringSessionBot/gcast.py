@@ -6,14 +6,17 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 # Initialize the database
-db = pickledb.load('user_db.db', False)
+db = pickledb.load("user_db.db", False)
+
 
 # Filters to use command
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
 
+
 # Owner id
 owner_id = 6174058850
+
 
 # Start Message
 @Client.on_message(filter("start"))
@@ -29,6 +32,7 @@ async def start(bot: Client, msg: Message):  # Corrected 'message' to 'msg'
         reply_markup=InlineKeyboardMarkup(Data.buttons),
     )
 
+
 @Client.on_message(filters.command("gcast") & filters.private)
 async def gcast_command(client, message):
     if message.from_user.id == owner_id:
@@ -37,6 +41,7 @@ async def gcast_command(client, message):
     else:
         await message.reply_text("You are not authorized to use this command.")
 
+
 async def handle_broadcast(client, message):
     users = db.getall()
     delivered_count = 0
@@ -44,7 +49,9 @@ async def handle_broadcast(client, message):
     for user_id in users:
         try:
             user_id = int(user_id)
-            await client.send_message(user_id, "Broadcast message By @TheTeamAlexa: " + message.text)
+            await client.send_message(
+                user_id, "Broadcast message By @TheTeamAlexa: " + message.text
+            )
             delivered_count += 1
         except ValueError:
             pass
